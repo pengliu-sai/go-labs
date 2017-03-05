@@ -23,7 +23,6 @@ func (*DefaultTcpHandle) Handle(conn net.Conn, easyAPI *EasyAPI) {
 	packet := make([]byte, packetSize)
 
 	if _, err := io.ReadFull(conn, packet); err != nil {
-		fmt.Println("---err: ", err.Error())
 		return
 	}
 
@@ -40,7 +39,7 @@ func (*DefaultTcpHandle) Handle(conn net.Conn, easyAPI *EasyAPI) {
 		return
 	}
 
-	newRsp := service.HandleRequest(easyAPI.headBuf[5], newReq)
+	newRsp := service.HandleRequest(msgID, newReq)
 	if newReq != nil {
 		newRsp, err := proto.Marshal(newRsp)
 
