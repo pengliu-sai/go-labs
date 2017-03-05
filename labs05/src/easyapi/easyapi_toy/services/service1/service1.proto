@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package service1;
+
+enum MsgID {
+    UNKNOW  = 0;
+    ADD     = 1;
+}
+
+message AddIn {
+    int64 A = 1;
+    int64 B = 2;
+}
+
+message AddOut {
+    int64 C = 3;
+}
