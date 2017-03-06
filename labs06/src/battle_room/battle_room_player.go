@@ -5,9 +5,9 @@ import "battle_core"
 type RoomPlayerStatus byte
 
 const (
-	RPS_HOLD  RoomPlayerStatus = 0 // 准备中
-	RPS_LOOK                   = 1 // 旁观中
-	RPS_READY                  = 2 // 占位中
+	RPS_STAND RoomPlayerStatus = 0 // 旁观中
+	RPS_SIT                    = 1 // 占座中
+	RPS_READY                  = 2 // 准备中
 )
 
 type BattleRoomPlayer struct {
